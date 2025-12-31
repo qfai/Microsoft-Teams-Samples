@@ -10,6 +10,7 @@ var botDisplayName = contains(provisionParameters, 'botDisplayName') ? provision
 var serverfarmsName = contains(provisionParameters, 'botServerfarmsName') ? provisionParameters['botServerfarmsName'] : '${resourceBaseName}bot' // Try to read name for App Service Plan from parameters
 var webAppSKU = contains(provisionParameters, 'botWebAppSKU') ? provisionParameters['botWebAppSKU'] : 'F1' // Try to read SKU for Azure Web App from parameters
 var webAppName = contains(provisionParameters, 'botSitesName') ? provisionParameters['botSitesName'] : '${resourceBaseName}bot' // Try to read name for Azure Web App from parameters
+var botAadAppTenantId = provisionParameters['botAadAppTenantId'] // Read AAD app tenant id for Azure Bot Service from parameters
 
 // Register your web service as a bot with the Bot Framework
 resource botService 'Microsoft.BotService/botServices@2021-03-01' = {
@@ -20,6 +21,8 @@ resource botService 'Microsoft.BotService/botServices@2021-03-01' = {
     displayName: botDisplayName
     endpoint: uri('https://${webApp.properties.defaultHostName}', '/api/messages')
     msaAppId: botAadAppClientId
+    msaAppType: 'SingleTenant'
+    msaAppTenantId: botAadAppTenantId
   }
   sku: {
     name: botServiceSku // You can follow https://aka.ms/teamsfx-bicep-add-param-tutorial to add botServiceSku property to provisionParameters to override the default value "F0".

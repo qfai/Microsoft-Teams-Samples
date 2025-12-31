@@ -6,7 +6,8 @@
       "value": {
         "resourceBaseName": "proactivemdev${{RESOURCE_SUFFIX}}",
         "botAadAppClientId": "${{BOT_ID}}",
-        "botAadAppClientSecret": "${{SECRET_BOT_PASSWORD}}"
+        "botAadAppClientSecret": "${{SECRET_BOT_PASSWORD}}",
+        "botAadAppTenantId": "${{BOT_TENANT_ID}}"
       }
     }
   }
