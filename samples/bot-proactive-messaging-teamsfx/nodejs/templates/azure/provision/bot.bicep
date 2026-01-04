@@ -21,7 +21,7 @@ resource botService 'Microsoft.BotService/botServices@2021-03-01' = {
     displayName: botDisplayName
     endpoint: uri('https://${webApp.properties.defaultHostName}', '/api/messages')
     msaAppId: botAadAppClientId
-    msaAppType: 'SingleTenant'
+    msaAppType: 'UserAssignedMSI'
     msaAppTenantId: botAadAppTenantId
   }
   sku: {
