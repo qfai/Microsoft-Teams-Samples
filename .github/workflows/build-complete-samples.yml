@@ -168,6 +168,10 @@ jobs:
               name: 'app-region-selection'
               version: '6.0.x'
 
+            - project_path: 'samples/tab-app-navigation/csharp/Microsoft.Teams.Samples.TabAppNavigation.Web/Microsoft.Teams.Samples.TabAppNavigation.Web.csproj'
+              name: 'tab-app-navigation'
+              version: '6.0.x'
+
             - project_path: 'samples/tab-external-auth/csharp/TabExternalAuth/TabExternalAuth.csproj'
               name: 'tab-external-auth'
               version: '6.0.x'
@@ -198,6 +202,10 @@ jobs:
 
             - project_path: 'samples/tab-channel-group-config-page-auth/csharp/ConfigTabAuthentication/TabAuthentication.csproj'
               name: 'tab-channel-group-config-page-auth'
+              version: '6.0.x'
+
+            - project_path: 'samples/tab-channel-group-quickstart/csharp/Microsoft.Teams.Samples.TabChannelGroupQuickstart.Web/Microsoft.Teams.Samples.TabChannelGroupQuickstart.Web.csproj'
+              name: 'tab-channel-group-quickstart'
               version: '6.0.x'
 
             - project_path: 'samples/tab-deeplink/csharp/DeepLinkBot/DeepLinkBot.csproj'
